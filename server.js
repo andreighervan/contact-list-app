@@ -49,7 +49,7 @@ function handleError(res, reason, message, code) {
  */
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname+'/dist/index.html'))
+    res.sendFile(path.join(__dirname+'/dist/contact-list-app/index.html'))
 })
 
 app.get("/api/contacts", function (req, res) {
