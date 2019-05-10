@@ -48,7 +48,7 @@ function handleError(res, reason, message, code) {
  *    POST: creates a new contact
  */
 
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname+'/dist/contact-list-app/index.html'))
 })
 
