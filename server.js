@@ -11,7 +11,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
 
-app.listen(process.env.PORT || 8080);
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 let db;
@@ -49,11 +48,9 @@ function handleError(res, reason, message, code) {
  *    POST: creates a new contact
  */
 
-/*app.get("/", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname+'/dist/index.html'))
-})*/
-
-console.log('console listening')
+})
 
 app.get("/api/contacts", function (req, res) {
     db.collection(CONTACTS_COLLECTION).find({}).toArray(function (err, docs) {
