@@ -2,14 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongodb = require("mongodb");
 const path = require("path");
+const cors = require("cors");
 
 const ObjectID = mongodb.ObjectID;
 
 const CONTACTS_COLLECTION = "contacts";
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
+
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 let db;
